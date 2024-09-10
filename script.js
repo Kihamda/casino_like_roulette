@@ -53,9 +53,8 @@ const startRotate = () => {
   const roulette = document.getElementById("circle-wrap");
   const reg = count % 360;
   roulette.style.rotate = reg + "deg";
-  count = count * 0.97;
-  if (count < 0.1) {
-    count = 0;
+  count = count * 0.98;
+  if (count < 0.3) {
     finish();
   }
   timer = requestAnimationFrame(startRotate);
@@ -84,7 +83,6 @@ const finish = () => {
   const result = document.getElementById("result");
   result.innerText = lists[answer];
   result.classList.add("show");
-  window.cancelAnimationFrame(timer);
 };
 
 function drawRouletteWheel(lists) {
@@ -107,11 +105,11 @@ function drawRouletteWheel(lists) {
         ? "green"
         : i % 2 === 0
         ? "red"
-        : "white";
+        : "black";
     ctx.fill();
 
     // 境界線を描画
-    ctx.strokeStyle = "black";
+    ctx.strokeStyle = "white";
     ctx.lineWidth = 2;
     ctx.stroke();
 
@@ -124,7 +122,7 @@ function drawRouletteWheel(lists) {
     ctx.rotate(Math.PI);
 
     ctx.textAlign = "center";
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "white";
     ctx.font = "bold 30px Arial"; // フォントサイズを大きくする
     ctx.fillText(lists[i], -(radius - 40), 10); // テキストをセクターの内側に描画
     ctx.restore();

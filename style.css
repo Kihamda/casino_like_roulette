@@ -8,7 +8,7 @@ body {
   height: 100dvh;
   overflow: hidden;
   color: aliceblue;
-  background-color: green;
+  background-color: rgb(25, 116, 25);
 }
 #title {
   top: 10%;
@@ -64,7 +64,7 @@ body {
   color: #000000;
   border-radius: 100vh;
   transition: 0.5s;
-  background-color: #ffc58c;
+  background-color: #ffffff;
 }
 
 #result {
