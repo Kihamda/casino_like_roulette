@@ -74,7 +74,6 @@ const START = () => {
   roulette.style.rotate =
     ((180 - 180 / 38 + randomNumber * (-360 / 38)) % 360) + "deg";
   answer = randomNumber;
-  startRotate();
 };
 
 const randomInt = () => {
