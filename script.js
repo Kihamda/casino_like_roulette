@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 let count = 0;
 let answer = 0;
+let big = false;
 let timer;
 
 const lists = [
@@ -53,8 +54,9 @@ const startRotate = () => {
   const roulette = document.getElementById("circle-wrap");
   const reg = count % 360;
   roulette.style.rotate = reg + "deg";
-  count = count * 0.98;
-  if (count < 0.3) {
+  count = count * 0.995;
+
+  if (count < 1) {
     finish();
   }
   timer = requestAnimationFrame(startRotate);
@@ -63,7 +65,7 @@ const startRotate = () => {
 const START = () => {
   const result = document.getElementById("result");
   result.classList.remove("show");
-  count = 99999;
+  count = 5000;
 
   const roulette = document.getElementById("circle");
   const randomNumber = randomInt();
